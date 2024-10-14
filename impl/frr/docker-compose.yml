@@ -1,0 +1,40 @@
+---
+version: '3'
+
+networks:
+  test_net1:
+    enable_ipv6: false
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+       - subnet: 3.0.0.0/24
+         gateway: 3.0.0.1
+
+
+services:
+  frr_1:
+    image: "ksator/frr8:latest"
+    container_name: frr_1
+    privileged: true
+    volumes:
+      - ./frr1:/etc/frr:rw
+    command: "/bin/bash /etc/frr/start_frr.sh" # run this script when the container starts 
+    networks:
+      test_net1:
+        ipv4_address: 3.0.0.2
+  
+  exabgp_1:
+    image: "mikenowak/exabgp:latest"
+    container_name: exabgp_1
+    privileged: true
+    volumes:
+      - ./exabgp1:/exabgp:rw
+    networks:
+      test_net1:
+        ipv4_address: 3.0.0.3
+    entrypoint: tail -f /dev/null # run this script when the container starts. This is a trick to keep the container running.
+    
+
+    
+

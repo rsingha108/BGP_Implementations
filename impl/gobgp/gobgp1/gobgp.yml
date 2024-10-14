@@ -1,0 +1,15 @@
+global:
+    config:
+        as: 30
+        router-id: 3.0.0.2
+
+neighbors:
+    - config: 
+        neighbor-address: 3.0.0.3
+        peer-as: 40
+      transport:
+        config:
+          local-address: 3.0.0.2
+      afi-safis:
+        - config:
+            afi-safi-name: ipv4-unicast
