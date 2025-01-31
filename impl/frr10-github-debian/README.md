@@ -1,3 +1,12 @@
+# Some Points to use frr10 properly
+1. use github/frr10 latest
+2. use command: "/usr/lib/frr/docker-start” in docker-compose.yml
+3. no bgp ebgp-requires-policy
+4. no bgp network import-check
+5. If using exabgp: then announce route with “next hop self”. If random as-path used then route won’t get installed.
+
+# Running instructions
+
 1. Choose the correct FRR version by chnaging the `ENV FRRVER` variable in the Dockerfile.
 2. Create the docker image from Dockerfile: `sudo docker build --tag ksator/frr8 .`
 3. The `docker-compose.yml` file specifies the network topology. Here we have a simple network topology, i.e. one frr router `frr_1` and one exabgp route injector `exabgp_1`. They are connected by `test_net1`. The ip address of the `frr_1` is `3.0.0.2` and the ip address of `exabgp_1` is `3.0.0.3`. To run the docker containers for frr and exabgp:
