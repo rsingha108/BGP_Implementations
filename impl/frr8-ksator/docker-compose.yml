@@ -14,7 +14,7 @@ networks:
 
 services:
   frr_1:
-    image: "ksator/frr8:latest"
+    image: "ksator/frr-stable:latest"
     container_name: frr_1
     privileged: true
     volumes:

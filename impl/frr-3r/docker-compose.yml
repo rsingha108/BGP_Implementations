@@ -23,38 +23,39 @@ networks:
 
 services:
   frr_1:
-    image: "github/frr10:latest"
+    image: "ksator/frr8:latest"
     container_name: frr_1
     privileged: true
     volumes:
       - ./frr1:/etc/frr:rw
-    command: "/usr/lib/frr/docker-start" # run this script when the container starts 
+    command: "/bin/bash /etc/frr/start_frr.sh" # run this script when the container starts 
+    networks:
+      test_net1:
+        ipv4_address: 3.0.0.3
+  
+  frr_2:
+    image: "ksator/frr8:latest"
+    container_name: frr_2
+    privileged: true
+    volumes:
+      - ./frr2:/etc/frr:rw
+    command: "/bin/bash /etc/frr/start_frr.sh" # run this script when the container starts 
     networks:
       test_net1:
         ipv4_address: 3.0.0.2
       test_net2:
         ipv4_address: 4.0.0.2
   
-  frr_2:
-    image: "github/frr10:latest"
-    container_name: frr_2
+  frr_3:
+    image: "ksator/frr8:latest"
+    container_name: frr_3
     privileged: true
     volumes:
-      - ./frr2:/etc/frr:rw
-    command: "/usr/lib/frr/docker-start" # run this script when the container starts 
-    networks:
-      test_net2:
-        ipv4_address: 4.0.0.3
-  
-  exabgp_1:
-    image: "mikenowak/exabgp:latest"
-    container_name: exabgp_1
-    privileged: true
-    volumes:
-      - ./exabgp1:/exabgp:rw
+      - ./frr3:/etc/frr:rw
+    command: "/bin/bash /etc/frr/start_frr.sh" 
     networks:
       test_net1:
-        ipv4_address: 3.0.0.3
+        ipv4_address: 4.0.0.3
     entrypoint: tail -f /dev/null # run this script when the container starts. This is a trick to keep the container running.
     
 
