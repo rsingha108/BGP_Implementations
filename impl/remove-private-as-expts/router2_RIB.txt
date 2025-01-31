@@ -2,7 +2,7 @@ BGP routing table entry for 100.10.0.0/24, version 1
 Paths: (1 available, best #1, table default)
   Advertised to non peer-group peers:
   3.0.0.3 4.0.0.3
-  300
+  65001
     3.0.0.3 from 3.0.0.3 (3.0.0.3)
       Origin IGP, valid, external, best (First path received)
-      Last update: Tue Jan 28 09:18:31 2025
+      Last update: Fri Jan 31 20:50:06 2025
