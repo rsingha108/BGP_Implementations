@@ -1,0 +1,80 @@
+[
+  {
+    "Node":"border4",
+    "Policy_Name":"Rmap",
+    "Input_Route":{
+      "asPath":[
+        {
+          "asns":[
+            65001
+          ],
+          "confederation":false
+        }
+      ],
+      "communities":[
+        "65001:1"
+      ],
+      "localPreference":200,
+      "metric":50,
+      "network":"10.10.0.0\/16",
+      "nextHopIp":"3.0.0.3",
+      "originType":"egp",
+      "originatorIp":"4.4.4.4",
+      "protocol":"bgp",
+      "sourceProtocol":null,
+      "tag":0,
+      "weight":0
+    },
+    "Action":"PERMIT",
+    "Output_Route":{
+      "asPath":[
+        {
+          "asns":[
+            65001
+          ],
+          "confederation":false
+        }
+      ],
+      "communities":[
+        "65001:1"
+      ],
+      "localPreference":200,
+      "metric":50,
+      "network":"10.10.0.0\/16",
+      "nextHopIp":"3.0.0.3",
+      "originType":"egp",
+      "originatorIp":"4.4.4.4",
+      "protocol":"bgp",
+      "sourceProtocol":null,
+      "tag":0,
+      "weight":0
+    },
+    "Difference":{
+      "diffs":[
+
+      ]
+    },
+    "Trace":[
+      {
+        "children":[
+
+        ],
+        "traceElement":{
+          "fragments":[
+            {
+              "text":"Matched "
+            },
+            {
+              "text":"route-map Rmap clause 10",
+              "vendorStructureId":{
+                "filename":"configs\/border4.cfg",
+                "structureName":"Rmap 10",
+                "structureType":"route-map-clause"
+              }
+            }
+          ]
+        }
+      }
+    ]
+  }
+]

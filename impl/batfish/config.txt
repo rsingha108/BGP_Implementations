@@ -1,0 +1,10 @@
+!
+hostname border4
+ip prefix-list PFXL permit 10.10.0.0/16
+ip community-list 100 permit 65001:1
+ip as-path access-list 99 permit 65001
+route-map Rmap permit 10
+	match ip address prefix-list PFXL
+	match community 100
+	match as-path 99
+end
