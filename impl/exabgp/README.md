@@ -3,7 +3,7 @@
 1. `sudo docker tag mikenowak/exabgp mikenowak_exabgp`
 2. `sudo docker save -o mikenowak_exabgp.tar mikwnowak_exabgp`
 3. `sudo zip mikwnowak_exabgp.zip mikwnowak_exabgp.tar.gz`
-4. Upload to google drive
+4. Upload to google drive (and share link)
 
 # To Load the image
 
