@@ -28,3 +28,18 @@ exabgp exabgp/conf.ini
 vtysh -c "show ip bgp"
 ```
 8. Run `sudo docker-compose down` from the same directory (`impl/frr`) to remove all containers and networks.
+
+# To Save the image
+
+1. `sudo docker tag github/frr10 github_frr10`
+2. `sudo docker save -o github_frr10.tar github_frr10`
+3. `sudo zip github_frr10.zip github_frr10.tar.gz`
+4. Upload to google drive
+
+# To Load the image
+
+1. `unzip github_frr10.zip` --> github_frr10.tar.gz
+2. `gunzip github_frr10.tar.gz` --> github_frr10.tar
+3. Load Image: `sudo docker load -i github_frr10.tar` 
+4. Change Image name: `sudo docker tag github_frr10 github/frr10`
+

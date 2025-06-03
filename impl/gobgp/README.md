@@ -18,3 +18,17 @@ exabgp exabgp/conf.ini
 gobgp global rib
 ```
 7. Run `sudo docker-compose down` from the same directory (`impl/gobgp`) to remove all containers and networks.
+
+# To Save the image
+
+1. `sudo docker tag ksator/gobgp:1.0 ksator_gobgp`
+2. `sudo docker save -o ksator_gobgp.tar ksator_gobgp`
+3. `sudo zip ksator_gobgp.zip ksator_gobgp.tar.gz`
+4. Upload to google drive
+
+# To Load the image
+
+1. `unzip ksator_gobgp.zip` --> ksator_gobgp.tar.gz
+2. `gunzip ksator_gobgp.tar.gz` --> ksator_gobgp.tar
+3. Load Image: `sudo docker load -i ksator_gobgp.tar` 
+4. Change Image name: `sudo docker tag ksator_gobgp ksator/gobgp`
