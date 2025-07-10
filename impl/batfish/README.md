@@ -3,7 +3,7 @@
 
 # How to get a test result?
 
-* Pull image batfish allinone
+* Pull image batfish/allinone
 * Install pybatfish: python -m pip install --upgrade pybatfish
 * Run the docker container:
 
