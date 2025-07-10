@@ -3,9 +3,9 @@
 
 # How to get a test result?
 
-* Pull image batfish/allinone
+* Pull image batfish/allinone (may happen automatically also)
 * Install pybatfish: python -m pip install --upgrade pybatfish
-* Run the docker container:
+* Run the docker container (change path if needed):
 
 sudo docker run -d --name batfish -v batfish-data:/data -v /home/rathin/Desktop/BGP_Implementations/impl/batfish/:/notebooks/testing/ -p 8888:8888 -p 9997:9997 -p 9996:9996 batfish/allinone
 
